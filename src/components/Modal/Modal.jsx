@@ -26,7 +26,7 @@ const Modal = ({ image, onClose }) => {
       <ModalOverlay onClick={closeModalHandler} />
       <ModalWrapper>
         <CloseIcon onClick={closeModalHandler} />
-        <img src={image.webformatURL} />
+        <img src={image.webformatURL} style={{ borderRadius: "10px" }} />
         <LikeIcon onClick={likeHandler} $isLiked={isLiked} />
       </ModalWrapper>
     </>
