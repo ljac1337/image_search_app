@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import SearchBar from "../components/SearchBar/SearchBar";
 import ImageCard from "../components/ImageCard/ImageCard";
-import { GridWrapper } from "../components/Grid/GridStyles";
+import { GridWrapper } from "../components/General/GridStyles";
 import Spinner from "../components/Spinner/Spinner";
 import { getImages } from "../api/images";
-import { ContainerInner } from "../styles/ContainerStyles";
+import { ContainerInner } from "../components/General/ContainerStyles";
 import { HeartIcon } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
-import { debounce } from "../utilities/debounce";
+
 import Modal from "../components/Modal/Modal";
 
 const Home = () => {
@@ -25,27 +25,13 @@ const Home = () => {
     setIsLoading(false);
     console.log(images);
     setImages(images.hits);
-
-    // function saveInput() {
-    //   console.log("Saving data");
-    // }
-    // const processChange = debounce(() => saveInput(), 2000);
-    // processChange();
-
-    // const val = event.target.value;
-    // setInput(val);
-    // getImages(val)
-    //   .then((result) => {
-    //     setImages(result.hits);
-    //   })
-    //   .catch((result) => {
-    //     console.log("error");
-    //   });
   };
 
   useEffect(() => {
     document.body.style.overflowY = !!modalImage ? "hidden" : "auto";
   }, [modalImage]);
+
+  console.log(images);
 
   return (
     <div>
@@ -60,7 +46,7 @@ const Home = () => {
       </ContainerInner>
       {images && (
         <GridWrapper>
-          {images.map((image) => (
+          {images.map((image, index) => (
             <ImageCard key={image.id} image={image} onExpand={setModalImage} />
           ))}
         </GridWrapper>

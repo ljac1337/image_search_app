@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { ContainerInner } from "../styles/ContainerStyles";
+import { ContainerInner } from "../components/General/ContainerStyles";
 import { HomeIcon } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
-import { GridWrapper } from "../components/Grid/GridStyles";
+import { GridWrapper } from "../components/General/GridStyles";
 import ImageCard from "../components/ImageCard/ImageCard";
 import Modal from "../components/Modal/Modal";
 

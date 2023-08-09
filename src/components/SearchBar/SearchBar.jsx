@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { InputContainer, InputField } from "./SearchBarStyles";
-import { getImages } from "../../api/images";
 
 const SearchBar = ({ onChange, value }) => {
   return (
