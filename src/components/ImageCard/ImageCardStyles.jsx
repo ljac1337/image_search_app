@@ -32,7 +32,6 @@ export const LikeIcon = styled(HeartIcon)`
 export const ImageContainer = styled.div`
   /* max-width: 300px; */
   border-radius: 10px;
-
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 0 auto;
   transition: all 0.2s ease-out;

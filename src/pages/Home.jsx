@@ -7,6 +7,7 @@ import { getImages } from "../api/images";
 import { ContainerInner } from "../components/General/ContainerStyles";
 import { HeartIcon } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
+import "./imagecard.css";
 
 import Modal from "../components/Modal/Modal";
 
@@ -46,9 +47,22 @@ const Home = () => {
       </ContainerInner>
       {images && (
         <GridWrapper>
-          {images.map((image, index) => (
-            <ImageCard key={image.id} image={image} onExpand={setModalImage} />
-          ))}
+          {images.map((image, index) => {
+            const imageAspectRatio =
+              image.webformatWidth / image.webformatHeight;
+            const imageClassName =
+              imageAspectRatio > 1 ? "landscape-image" : "portrait-image";
+            console.log(imageClassName);
+
+            return (
+              <ImageCard
+                key={image.id}
+                image={image}
+                onExpand={setModalImage}
+                className={imageClassName}
+              />
+            );
+          })}
         </GridWrapper>
       )}
       {isLoading && <Spinner />}
