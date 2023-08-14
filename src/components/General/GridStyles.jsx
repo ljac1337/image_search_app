@@ -14,7 +14,6 @@ export const GridWrapper = styled.div`
 
   @media screen and (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: masonry;
     width: 1000px;
     align-content: start;
   }
