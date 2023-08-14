@@ -23,7 +23,7 @@ const Home = () => {
     setIsLoading(true);
     const images = await getImages(searchString);
     setIsLoading(false);
-    console.log(images);
+    // console.log(images);
     setImages(images.hits);
   };
 
@@ -31,7 +31,7 @@ const Home = () => {
     document.body.style.overflowY = !!modalImage ? "hidden" : "auto";
   }, [modalImage]);
 
-  console.log(images);
+  // console.log(images);
 
   return (
     <div>
