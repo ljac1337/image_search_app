@@ -7,7 +7,6 @@ import { getImages } from "../api/images";
 import { ContainerInner } from "../components/General/ContainerStyles";
 import { HeartIcon } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
-import "./imagecard.css";
 
 import Modal from "../components/Modal/Modal";
 
@@ -44,6 +43,7 @@ const Home = () => {
           color="red"
           onClick={() => navigate("/liked-images")}
         />
+        <p></p>
       </ContainerInner>
       {images && (
         <GridWrapper>

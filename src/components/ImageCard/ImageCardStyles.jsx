@@ -47,6 +47,16 @@ export const ImageContainer = styled.div`
   &:active {
     transform: translateY(-1px);
   }
+
+  &.landscape-image {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  &.portrait-image {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
 `;
 
 export const Picture = styled.img`
