@@ -1,5 +1,5 @@
 const apiOrigin = "https://pixabay.com";
-const apiKey = "26032813-5eca57a90774446a771ac3a81";
+const apiKey = "38441939-931b3727bebd0c9cc1a36f19b";
 
 export const getImages = (searchTerm = "") => {
   return fetch(
