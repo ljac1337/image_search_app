@@ -5,7 +5,7 @@ import { LikeIcon } from "../ImageCard/ImageCardStyles";
 const Modal = ({ image, onClose }) => {
   const likes = JSON.parse(localStorage.getItem("likedImages")) || {};
   const [isLiked, setIsLiked] = useState(!!likes[image.id]);
-  console.log(isLiked);
+  // console.log(isLiked);
 
   const closeModalHandler = () => {
     onClose("");

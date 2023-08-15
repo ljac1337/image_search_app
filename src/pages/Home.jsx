@@ -4,8 +4,11 @@ import ImageCard from "../components/ImageCard/ImageCard";
 import Spinner from "../components/Spinner/Spinner";
 import { GridWrapper } from "../components/General/GridStyles";
 import { getImages } from "../api/images";
-import { ContainerInner } from "../components/General/ContainerStyles";
-import { HeartIcon } from "@heroicons/react/24/solid";
+import {
+  ContainerInner,
+  HearthIcon,
+} from "../components/General/ContainerStyles";
+
 import { useNavigate } from "react-router-dom";
 
 import Modal from "../components/Modal/Modal";
@@ -37,13 +40,8 @@ const Home = () => {
     <div>
       <ContainerInner>
         <SearchBar onChange={changeSearchString} value={searchString} />
-        <HeartIcon
-          width="50px"
-          cursor="pointer"
-          color="red"
-          onClick={() => navigate("/liked-images")}
-        />
-        <p></p>
+        <HearthIcon onClick={() => navigate("/liked-images")} />
+        <p>dada</p>
       </ContainerInner>
       {images && (
         <GridWrapper>
