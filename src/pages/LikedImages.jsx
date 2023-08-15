@@ -17,8 +17,6 @@ const LikedImages = () => {
     images.push({
       id: key,
       webformatURL: likes[key],
-      webformatWidth: likes[key],
-      webformatHeight: likedImageData.webformatHeight,
     });
   }
   // console.log(images);
@@ -29,18 +27,9 @@ const LikedImages = () => {
         <HomeIcon width="50px" cursor="pointer" onClick={() => navigate("/")} />
       </ContainerInner>
       <GridWrapper>
-        {images.map((image, index) => {
-          const imageAspectRatio = image.webformatWidth / image.webformatHeight;
-          const imageClassName =
-            imageAspectRatio > 1 ? "landscape-image" : "portrait-image";
-
+        {images.map((image) => {
           return (
-            <ImageCard
-              key={image.id}
-              image={image}
-              onExpand={setModalImage}
-              className={imageClassName}
-            />
+            <ImageCard key={image.id} image={image} onExpand={setModalImage} />
           );
         })}
       </GridWrapper>
