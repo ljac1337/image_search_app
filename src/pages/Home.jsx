@@ -54,8 +54,8 @@ const Home = () => {
     <div>
       <ContainerInner>
         <SearchBar onChange={changeSearchString} value={searchString} />
-        <ContainerIcon>
-          <HearthIcon onClick={() => navigate("/liked-images")} />
+        <ContainerIcon onClick={() => navigate("/liked-images")}>
+          <HearthIcon />
           <HeartParagraph>{likedImages.length}</HeartParagraph>
         </ContainerIcon>
       </ContainerInner>

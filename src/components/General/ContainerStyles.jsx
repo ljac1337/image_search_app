@@ -39,4 +39,5 @@ export const HeartParagraph = styled.p`
   font-size: 14px;
   font-weight: bold;
   color: white;
+  cursor: pointer;
 `;
