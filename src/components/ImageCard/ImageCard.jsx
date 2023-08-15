@@ -5,7 +5,7 @@ import { StyledExpand } from "./ImageCardStyles";
 const ImageCard = ({ image, onExpand, className }) => {
   const expandClickHandler = () => {
     onExpand(image);
-    console.log(image.id, image.webformatURL);
+    // console.log(image.id, image.webformatURL);
   };
 
   return (

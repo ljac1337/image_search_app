@@ -21,7 +21,7 @@ const LikedImages = () => {
       webformatHeight: likedImageData.webformatHeight,
     });
   }
-  console.log(images);
+  // console.log(images);
   return (
     <>
       <ContainerInner>
