@@ -5,7 +5,9 @@ import Spinner from "../components/Spinner/Spinner";
 import { GridWrapper } from "../components/General/GridStyles";
 import { getImages } from "../api/images";
 import {
+  ContainerIcon,
   ContainerInner,
+  HeartParagraph,
   HearthIcon,
 } from "../components/General/ContainerStyles";
 
@@ -34,17 +36,17 @@ const Home = () => {
     document.body.style.overflowY = !!modalImage ? "hidden" : "auto";
   }, [modalImage]);
 
-  const storedValue = JSON.parse(localStorage.getItem("likedImages"));
-  console.log(storedValue);
+  const likes = JSON.parse(localStorage.getItem("likedImages"));
+  // console.log(likes);
 
   const likedImages = [];
-  for (const key in storedValue) {
+  for (const key in likes) {
     likedImages.push({
       id: key,
-      webformatURL: storedValue[key],
+      webformatURL: likes[key],
     });
   }
-  console.log(likedImages.length);
+  // console.log(likedImages.length);
 
   // console.log(images);
 
@@ -52,12 +54,14 @@ const Home = () => {
     <div>
       <ContainerInner>
         <SearchBar onChange={changeSearchString} value={searchString} />
-        <HearthIcon onClick={() => navigate("/liked-images")} />
-        <p>{likedImages.length}</p>
+        <ContainerIcon>
+          <HearthIcon onClick={() => navigate("/liked-images")} />
+          <HeartParagraph>{likedImages.length}</HeartParagraph>
+        </ContainerIcon>
       </ContainerInner>
       {images && (
         <GridWrapper>
-          {images.map((image, index) => {
+          {images.map((image) => {
             const imageAspectRatio =
               image.webformatWidth / image.webformatHeight;
             const imageClassName =

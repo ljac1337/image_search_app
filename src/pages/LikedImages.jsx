@@ -17,7 +17,7 @@ const LikedImages = () => {
       webformatURL: likes[key],
     });
   }
-  console.log(images.length);
+  // console.log(images.length);
   return (
     <>
       <ContainerInner>

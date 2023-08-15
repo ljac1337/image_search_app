@@ -25,3 +25,18 @@ export const ContainerInner = styled.div`
     width: 1000px;
   }
 `;
+
+export const ContainerIcon = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+export const HeartParagraph = styled.p`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -160%);
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+`;
