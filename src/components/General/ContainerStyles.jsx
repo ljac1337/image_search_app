@@ -1,4 +1,11 @@
 import styled from "styled-components";
+import { HeartIcon } from "@heroicons/react/24/solid";
+
+export const HearthIcon = styled(HeartIcon)`
+  width: 50px;
+  cursor: pointer;
+  color: red;
+`;
 
 export const ContainerInner = styled.div`
   width: 400px;
