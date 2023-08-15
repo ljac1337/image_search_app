@@ -34,6 +34,18 @@ const Home = () => {
     document.body.style.overflowY = !!modalImage ? "hidden" : "auto";
   }, [modalImage]);
 
+  const storedValue = JSON.parse(localStorage.getItem("likedImages"));
+  console.log(storedValue);
+
+  const likedImages = [];
+  for (const key in storedValue) {
+    likedImages.push({
+      id: key,
+      webformatURL: storedValue[key],
+    });
+  }
+  console.log(likedImages.length);
+
   // console.log(images);
 
   return (
@@ -41,7 +53,7 @@ const Home = () => {
       <ContainerInner>
         <SearchBar onChange={changeSearchString} value={searchString} />
         <HearthIcon onClick={() => navigate("/liked-images")} />
-        <p>dada</p>
+        <p>{likedImages.length}</p>
       </ContainerInner>
       {images && (
         <GridWrapper>

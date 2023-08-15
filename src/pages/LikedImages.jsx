@@ -12,14 +12,12 @@ const LikedImages = () => {
   const likes = JSON.parse(localStorage.getItem("likedImages")) || {};
   const images = [];
   for (const key in likes) {
-    const likedImageData = likes[key];
-    // console.log(likes);
     images.push({
       id: key,
       webformatURL: likes[key],
     });
   }
-  // console.log(images);
+  console.log(images.length);
   return (
     <>
       <ContainerInner>
