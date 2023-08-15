@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import SearchBar from "../components/SearchBar/SearchBar";
 import ImageCard from "../components/ImageCard/ImageCard";
-import { GridWrapper } from "../components/General/GridStyles";
 import Spinner from "../components/Spinner/Spinner";
+import { GridWrapper } from "../components/General/GridStyles";
 import { getImages } from "../api/images";
 import { ContainerInner } from "../components/General/ContainerStyles";
 import { HeartIcon } from "@heroicons/react/24/solid";
@@ -52,7 +52,6 @@ const Home = () => {
               image.webformatWidth / image.webformatHeight;
             const imageClassName =
               imageAspectRatio > 1 ? "landscape-image" : "portrait-image";
-            console.log(imageClassName);
 
             return (
               <ImageCard

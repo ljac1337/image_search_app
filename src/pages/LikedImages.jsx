@@ -12,10 +12,16 @@ const LikedImages = () => {
   const likes = JSON.parse(localStorage.getItem("likedImages")) || {};
   const images = [];
   for (const key in likes) {
-    console.log(likes[key]);
-    images.push({ id: key, webformatURL: likes[key] });
+    const likedImageData = likes[key];
+    // console.log(likes);
+    images.push({
+      id: key,
+      webformatURL: likes[key],
+      webformatWidth: likes[key],
+      webformatHeight: likedImageData.webformatHeight,
+    });
   }
-
+  console.log(images);
   return (
     <>
       <ContainerInner>
@@ -23,9 +29,20 @@ const LikedImages = () => {
         <HomeIcon width="50px" cursor="pointer" onClick={() => navigate("/")} />
       </ContainerInner>
       <GridWrapper>
-        {images.map((image) => (
-          <ImageCard key={image.id} image={image} onExpand={setModalImage} />
-        ))}
+        {images.map((image, index) => {
+          const imageAspectRatio = image.webformatWidth / image.webformatHeight;
+          const imageClassName =
+            imageAspectRatio > 1 ? "landscape-image" : "portrait-image";
+
+          return (
+            <ImageCard
+              key={image.id}
+              image={image}
+              onExpand={setModalImage}
+              className={imageClassName}
+            />
+          );
+        })}
       </GridWrapper>
       {modalImage && <Modal onClose={setModalImage} image={modalImage} />}
     </>
